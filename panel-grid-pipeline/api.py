@@ -467,6 +467,7 @@ def _build_composite(img_list: list[Optional[np.ndarray]]) -> np.ndarray:
             canvas[ys:ys + sub_h, 0:sub_w] = norm
         else:
             ci = idx - NUM_SUB_SEGMENT
+            ci = NUM_SUB_SEGMENT - 1 - ci   # reverse order: 16 at top, 9 at bottom
             ys = y_pos[ci];  xs = sub_w + COLUMN_GAP
             canvas[ys:ys + sub_h, xs:xs + sub_w] = norm
 
